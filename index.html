@@ -5,26 +5,79 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Young+Serif">
+
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Outfit">
+
+  <link rel="stylesheet" href="https://fonts.google.com/specimen/Halant" />
   
   <title>Frontend Mentor | Recipe page</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    :root{
+      --white: hsl(0, 0%, 100%);
+      --Stone-100: hsl(30, 54%, 90%);
+      --Stone-150: hsl(30, 18%, 87%);
+      --Stone-600: hsl(30, 10%, 34%);
+      --Stone-900: hsl(24, 5%, 18%);
+      --Brown-800: hsl(14, 45%, 36%);
+      --Rose-800: hsl(332, 51%, 32%);
+      --Rose-50: hsl(330, 100%, 98%);
+    }
+
+    *{
+      margin: 0;
+    }
+
+    #container{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    #container #recipe-container{
+      justify-content: center;
+      align-items: center;
+      width: 500px;
+    }
+
+    #container #recipe-container .recipe-img{
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    #container #recipe-container img{
+      width: 500px;
+      border-radius: 10px;
+    }
+
+    #container #recipe-container #recipe-name{
+      font-family: "Young Serif", serif;
+      font-weight: 300;
+    }
+
+    @font-face {
+      font-family: Young Serif;
+      src: url(./fonts/YoungSerif-Regular.ttf);
+    }
   </style>
 </head>
 <body>
   <div id="container">
   <div id="recipe-container">
+    <div class="recipe-img">
     <img src="./assets/images/image-omelette.jpeg" />
+    </div>
     <h1 id="recipe-name">Simple Omelette Recipe</h1>
-    <p>An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked 
+    <p id="recipe-des">An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked 
       to perfection, optionally filled with your choice of cheese, vegetables, or meats.</p>
   
     <section id="recipe-time">
-      <h2>Preparation time</h2>
-      <ul>
+      <h2 id="preparation-time">Preparation time</h2>
+      <ul id="preparation-guide">
         <li>Total: Approximately 10 minutes</li>
         <li>Preparation: 5 minutes</li>
         <li>Cooking: 5 minutes</li>
@@ -32,7 +85,7 @@
     </section>
 
     <h2 id="Ingredients">Ingredients</h2>
-    <ul>
+    <ul id="Ingredients-list">
       <li>2-3 large eggs</li>
       <li>Salt, to taste</li>
       <li>Pepper, to taste</li>
@@ -40,8 +93,8 @@
       <li>Optional fillings: cheese, diced vegetables, cooked meats, herbs</li>
     </ul>
 
-    <h2>Instructions</h2>
-    <ol>
+    <h2 id="Instrcutions">Instructions</h2>
+    <ol id="instructions-list">
       <li>Beat the eggs: In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. 
         You can add a tablespoon of water or milk for a fluffier texture.</li>
       <li>Heat the pan: Place a non-stick frying pan over medium heat and add butter or oil.
@@ -56,49 +109,28 @@
       </li>
     </ol>
 
-  
+    <h2 id="nutrition">Nutrition</h2>
+    <p id="nutrition-des">The table below shows nutritional values per serving without the additional fillings.</p>
 
-  
+    <div id="nutrition-table">
+      <div id="row">
+        <span class="nutrient">Calories</span>
+        <span class="amount">277kcal</span>
+      </div>
+      <div id="row">
+        <span class="nutrient">Carbs</span>
+        <span class="amount">0g</span>
+      </div>
+      <div id="row">
+        <span class="nutrient">Protein</span>
+        <span class="amount">20g</span>
+      </div>
+      <div id="row">
+        <span class="nutrient">Fat</span>
+        <span class="amount">22g</span>
+      </div>
+    </div>
 
-  
-  
-  
-
-  
-
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-  Nutrition
-
-  The table below shows nutritional values per serving without the additional fillings.
-
-  Calories
-  277kcal
-
-  Carbs
-  0g
-
-  Protein
-  20g
-
-  Fat
-  22g
   </div>
   </div>
 </body>
