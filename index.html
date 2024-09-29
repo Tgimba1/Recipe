@@ -35,13 +35,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      background-color: var(--Rose-50);
       
     }
 
     #container #recipe-container{
       justify-content: center;
       align-items: center;
-      width: 500px;
+      width: 650px;
+      background-color: white;
+      padding: 40px;
+      margin: 50px;
+      border-radius: 15px;
     }
 
     #container #recipe-container .recipe-img{
@@ -50,18 +55,193 @@
     }
 
     #container #recipe-container img{
-      width: 500px;
+      width: 650px;
       border-radius: 10px;
     }
 
     #container #recipe-container #recipe-name{
       font-family: "Young Serif", serif;
       font-weight: 300;
+      font-size: 40px;
+      margin-bottom: 20px;
+      color: var(--Stone-900);
+    }
+
+    #container #recipe-container #recipe-des{
+      font-family: "Outfit", sans-serif;
+      font-size: 16px;
+      line-height: 1.5em  ;
+      margin-bottom: 20px;
+      color: var(--Stone-600);
+    }
+
+    #container #recipe-container #recipe-time{
+      background-color: var(--Rose-50);
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    #container #recipe-container #recipe-time #preparation-time{
+      font-family: "Outfit", serif;
+      color: var(--Rose-800);
+      font-size: 18px;
+    }
+
+    #container #recipe-container #recipe-time #preparation-guide{
+      font-family: "Outfit", serif;
+      color: var(--Stone-600);
+    }
+
+    #container #recipe-container #recipe-time #preparation-guide li{
+      padding-top: 10px;
+      text-indent: 20px;
+    }
+
+    #container #recipe-container #recipe-time #preparation-guide li::marker{
+      font-size: 10px;
+      color: var(--Rose-800);
+    }
+
+    #container #recipe-container #recipe-time #preparation-guide li span{
+      font-weight: 800;
+    }
+
+    #Ingredients{
+      font-family: "Young Serif", serif;
+      color: var(--Brown-800);
+      font-weight: lighter;
+      margin-bottom: 20px;
+    }
+
+    #Ingredients-list{
+      font-family: "Outfit", sans-serif;
+      color: var(--Stone-600);
+    }
+
+    #Ingredients-list li{
+      margin-bottom: 10px;
+      text-indent: 20px;
+    }
+
+    #Ingredients-list li::marker{
+      font-size: 10px;
+      color: var(--Brown-800);
+    }
+
+    hr{
+      margin: 30px 0 30px 0 ;
+      background-color: var(--Stone-600);
+      border: none;
+      height: 0.5px;
+    }
+
+    #Instructions{
+      font-family: "Young Serif", sans-serif;
+      color: var(--Brown-800);
+      font-weight: lighter;
+      margin-bottom: 20px;
+    }
+
+    #Instructions-list{
+      font-family: "Outfit", sans-serif;
+      color: var(--Stone-600);
+    }
+
+    #Instructions-list li{
+      margin-bottom: 10px;
+      text-indent: 20px;
+    }
+
+    #Instructions-list li span{
+      font-weight: 800;
+    }
+
+    #Instructions-list li::marker{
+      color: var(--Brown-800);
+      font-weight: 800;
+    }
+
+    #Nutrition{
+      font-family: "Young Serif", sans-serif;
+      color: var(--Brown-800);
+      font-weight: lighter;
+      margin-bottom: 20px;
+    }
+
+    #Nutrition-des{
+      font-family: "Outfit", sans-serif;
+      font-size: 16px;
+      line-height: 1.5em  ;
+      margin-bottom: 20px;
+      color: var(--Stone-600);
+    }
+
+    #Nutrition-table{
+      font-family: "Outfit", sans-serif;
+      font-size: 16px;
+    }
+
+    #Nutrition-table #row{
+      text-indent: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      border-bottom: 1px solid var(--Brown-800);
+      padding: 10px 0px 10px 0px;
+    }
+
+    #Nutrition-table #row:last-child{
+      border-bottom: none;
+    }
+
+    #Nutrition-table #row .nutrient{
+      width: 100%;
+      color: var(--Stone-600);
+    }
+
+    #Nutrition-table #row .amount{
+      width: 100%;
+      color: var(--Brown-800);
+      font-weight: bold;
+    }
+
+    @media (max-width: 750px){
+
+      
+      #container #recipe-container{
+        flex-wrap: wrap;
+        width: 90%;
+        height: auto;
+        word-wrap: break-word;
+      }
+      #container #recipe-container img{
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 750px){
+      body{
+        margin: 0;
+        overflow: hidden;
+      }
+    }
+
+    @media (max-width: 375px){
+      #container #recipe-container{
+        word-wrap: break-word;
+      }
+     
     }
 
     @font-face {
       font-family: Young Serif;
       src: url(./fonts/YoungSerif-Regular.ttf);
+    } 
+
+    @font-face {
+      font-family: Outfit;
+      src: url(./fonts/Outfit-VariableFont_wght.ttf);
     }
   </style>
 </head>
@@ -78,9 +258,9 @@
     <section id="recipe-time">
       <h2 id="preparation-time">Preparation time</h2>
       <ul id="preparation-guide">
-        <li>Total: Approximately 10 minutes</li>
-        <li>Preparation: 5 minutes</li>
-        <li>Cooking: 5 minutes</li>
+        <li><span>Total:</span> Approximately 10 minutes</li>
+        <li><span>Preparation:</span> 5 minutes</li>
+        <li><span>Cooking:</span> 5 minutes</li>
       </ul>
     </section>
 
@@ -92,27 +272,27 @@
       <li>1 tablespoon of butter or oil</li>
       <li>Optional fillings: cheese, diced vegetables, cooked meats, herbs</li>
     </ul>
-
-    <h2 id="Instrcutions">Instructions</h2>
-    <ol id="instructions-list">
-      <li>Beat the eggs: In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. 
+    <hr>
+    <h2 id="Instructions">Instructions</h2>
+    <ol id="Instructions-list">
+      <li><span>Beat the eggs:</span> In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. 
         You can add a tablespoon of water or milk for a fluffier texture.</li>
-      <li>Heat the pan: Place a non-stick frying pan over medium heat and add butter or oil.
+      <li><span>Heat the pan:</span> Place a non-stick frying pan over medium heat and add butter or oil.
       </li>
-      <li>Cook the omelette: Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure 
+      <li><span>Cook the omelette:</span> Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure 
         the eggs evenly coat the surface.</li>
-      <li>Add fillings (optional): When the eggs begin to set at the edges but are still slightly runny in the 
+      <li><span>Add fillings (optional):</span> When the eggs begin to set at the edges but are still slightly runny in the 
         middle, sprinkle your chosen fillings over one half of the omelette.</li>
-      <li>Fold and serve: As the omelette continues to cook, carefully lift one edge and fold it over the 
+      <li><span>Fold and serve:</span> As the omelette continues to cook, carefully lift one edge and fold it over the 
         fillings. Let it cook for another minute, then slide it onto a plate.</li>
-      <li>Enjoy: Serve hot, with additional salt and pepper if needed.
+      <li><span>Enjoy:</span> Serve hot, with additional salt and pepper if needed.
       </li>
     </ol>
+    <hr>
+    <h2 id="Nutrition">Nutrition</h2>
+    <p id="Nutrition-des">The table below shows nutritional values per serving without the additional fillings.</p>
 
-    <h2 id="nutrition">Nutrition</h2>
-    <p id="nutrition-des">The table below shows nutritional values per serving without the additional fillings.</p>
-
-    <div id="nutrition-table">
+    <div id="Nutrition-table">
       <div id="row">
         <span class="nutrient">Calories</span>
         <span class="amount">277kcal</span>
